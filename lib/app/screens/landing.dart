@@ -2,7 +2,7 @@ import 'package:first_firestore_practical/app/screens/auth/authentication_screen
 import 'package:first_firestore_practical/app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
-bool x = true;
+bool x = false;
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);
