@@ -1,3 +1,6 @@
+import 'package:first_firestore_practical/app/widgets/buttons/full_width.dart';
+import 'package:first_firestore_practical/app/widgets/fields/pass_field.dart';
+import 'package:first_firestore_practical/app/widgets/fields/text_field.dart';
 import 'package:flutter/material.dart';
 
 class AuthenticationScreen extends StatelessWidget {
@@ -20,33 +23,11 @@ class AuthenticationScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            TextField(
-              controller: _email,
-              decoration: const InputDecoration(
-                labelText: 'E-Mail',
-                hintText: 'john@due.con',
-              ),
-            ),
+            NormalTextField(hint: 'jon@due.com', label: 'E-Mail', controller: _email),
             const SizedBox(height: 10),
-            TextField(
-              controller: _password,
-              decoration: const InputDecoration(
-                labelText: 'Password',
-                hintText: '********',
-              ),
-              obscureText: true,
-            ),
+            PasswordField(hint: '********', label: 'Password', controller: _password),
             const SizedBox(height: 30),
-            SizedBox(
-              height: 40,
-              child: ElevatedButton(
-                onPressed: () {
-                  print(_email.text);
-                  print(_password.text);
-                },
-                child: const Text('Login'),
-              ),
-            ),
+            FullWidthButton(text: 'Login', onTap: () {}),
             const SizedBox(height: 10),
             const Center(
               child: Text(
@@ -57,16 +38,7 @@ class AuthenticationScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            SizedBox(
-              height: 40,
-              child: ElevatedButton(
-                onPressed: () {
-                  print(_email.text);
-                  print(_password.text);
-                },
-                child: const Text('Register'),
-              ),
-            ),
+            FullWidthButton(text: 'Register', onTap: () {}),
           ],
         ),
       ),
